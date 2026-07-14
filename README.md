@@ -36,6 +36,9 @@ Whenever someone fills out a contact form on a business website, someone needs t
 - ✅ Edit lead details, delete lead
 - ✅ Fully responsive UI (mobile-friendly sidebar + table)
 
+  ## netlify link
+  task2-mini-crm-781.netlify.app
+
 ## 🗂️ Project Structure
 
 ```
