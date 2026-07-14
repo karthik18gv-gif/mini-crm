@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — Mini CRM</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-theme="dark">
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="brand" style="justify-content:center;margin-bottom:22px;">
+      <span class="brand-mark">KWS</span><span class="brand-name">Mini CRM</span>
+    </div>
+    <h1 class="auth-title">Admin Sign In</h1>
+    <p class="auth-sub">Manage incoming leads, update status, and track follow-ups.</p>
+
+    <form id="loginForm" novalidate>
+      <div class="form-row">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required autocomplete="username" placeholder="admin">
+      </div>
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary" id="loginBtn" style="width:100%;">Sign In</button>
+      <p id="loginStatus" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="auth-hint">Default demo credentials: <code>admin</code> / <code>admin123</code><br>(set in your <code>.env</code> file — change after first login)</p>
+    <a href="/" class="back-link">← Back to site</a>
+  </div>
+</div>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>

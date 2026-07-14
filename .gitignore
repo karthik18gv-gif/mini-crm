@@ -1,0 +1,5 @@
+node_modules/
+.env
+server/crm.db-shm
+server/crm.db-wal
+npm-debug.log

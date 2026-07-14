@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karthik Web Studio — Full-Stack Development Services</title>
+<meta name="description" content="Freelance full-stack development studio. Get in touch to discuss your next project.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="dark">
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="brand"><span class="brand-mark">KWS</span><span class="brand-name">Karthik Web Studio</span></a>
+    <nav class="main-nav">
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="/admin/login.html" class="btn btn-ghost btn-sm">Admin Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero-simple">
+    <p class="eyebrow">Full-Stack Development Studio</p>
+    <h1 class="hero-title">Websites and web apps<br> built to <span class="accent">run your business</span>,<br> not just look good.</h1>
+    <p class="hero-sub">Tell us about your project below — every message lands directly in our lead pipeline so nothing falls through the cracks.</p>
+    <a href="#contact" class="btn btn-primary">Get a Quote</a>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-head">
+      <p class="eyebrow">What we build</p>
+      <h2>Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><h3>Business Websites</h3><p>Fast, responsive, SEO-ready sites that convert visitors into leads.</p></div>
+      <div class="service-card"><h3>Custom Web Apps</h3><p>Dashboards, portals and internal tools built on Flask, Django or Node.</p></div>
+      <div class="service-card"><h3>Cloud &amp; Deployment</h3><p>AWS-hosted, production-ready infrastructure for your app.</p></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contact">
+    <div class="section-head">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Tell us about your project</h2>
+      <p class="section-sub">This form is the front door of our Mini CRM — submissions appear instantly in the admin dashboard as new leads.</p>
+    </div>
+
+    <form id="leadForm" class="contact-form" novalidate>
+      <div class="form-row">
+        <label for="name">Full name *</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+      </div>
+      <div class="form-row">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Optional">
+      </div>
+      <div class="form-row">
+        <label for="source">How did you hear about us?</label>
+        <select id="source" name="source">
+          <option value="website">Website</option>
+          <option value="referral">Referral</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="instagram">Instagram</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Project details *</label>
+        <textarea id="message" name="message" rows="5" required placeholder="What do you need built?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" id="submitBtn">Submit Inquiry</button>
+      <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <p>© <span id="year"></span> Karthik Web Studio — Mini CRM demo built for Future Interns Task 2.</p>
+  </div>
+</footer>
+
+<script src="js/public.js"></script>
+</body>
+</html>

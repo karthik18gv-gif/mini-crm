@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Mini CRM</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-theme="dark">
+
+<div class="app-shell">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="brand" style="margin-bottom:36px;">
+      <span class="brand-mark">KWS</span><span class="brand-name">Mini CRM</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link active" data-view="overview">📊 Overview</a>
+      <a href="#" class="sidebar-link" data-view="leads">👤 Leads</a>
+    </nav>
+    <div class="sidebar-foot">
+      <p id="adminName" class="admin-name"></p>
+      <button id="logoutBtn" class="btn btn-ghost btn-sm" style="width:100%;">Log Out</button>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="app-main">
+    <header class="app-topbar">
+      <h1 id="viewTitle">Overview</h1>
+      <a href="/" target="_blank" class="btn btn-ghost btn-sm">View Public Site ↗</a>
+    </header>
+
+    <!-- ---------- OVERVIEW VIEW ---------- -->
+    <section id="view-overview" class="view">
+      <div class="stats-grid">
+        <div class="stat-card"><span id="statTotal">–</span><small>Total Leads</small></div>
+        <div class="stat-card"><span id="statNew">–</span><small>New</small></div>
+        <div class="stat-card"><span id="statContacted">–</span><small>Contacted</small></div>
+        <div class="stat-card"><span id="statConverted">–</span><small>Converted</small></div>
+        <div class="stat-card stat-card--accent"><span id="statConversion">–</span><small>Conversion Rate</small></div>
+      </div>
+
+      <div class="panel">
+        <h3>Leads received — last 7 days</h3>
+        <div id="trendChart" class="trend-chart"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Leads by source</h3>
+        <div id="sourceBreakdown" class="source-breakdown"></div>
+      </div>
+    </section>
+
+    <!-- ---------- LEADS VIEW ---------- -->
+    <section id="view-leads" class="view" style="display:none;">
+      <div class="toolbar">
+        <input type="search" id="searchInput" placeholder="Search by name or email...">
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option value="new">New</option>
+          <option value="contacted">Contacted</option>
+          <option value="converted">Converted</option>
+          <option value="lost">Lost</option>
+        </select>
+        <select id="sourceFilter">
+          <option value="">All sources</option>
+        </select>
+        <select id="sortOrder">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table class="leads-table">
+          <thead>
+            <tr>
+              <th>Name</th><th>Email</th><th>Source</th><th>Status</th><th>Received</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="leadsTableBody">
+            <tr><td colspan="6" class="table-empty">Loading leads...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination" id="pagination"></div>
+    </section>
+  </div>
+</div>
+
+<!-- ============ LEAD DETAIL MODAL ============ -->
+<div id="leadModal" class="modal-overlay" style="display:none;">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div class="modal-header">
+      <h2 id="modalName">—</h2>
+      <select id="modalStatus" class="status-select"></select>
+    </div>
+    <div class="modal-body">
+      <div class="modal-info">
+        <div><span>Email</span><p id="modalEmail">—</p></div>
+        <div><span>Phone</span><p id="modalPhone">—</p></div>
+        <div><span>Source</span><p id="modalSource">—</p></div>
+        <div><span>Received</span><p id="modalCreated">—</p></div>
+      </div>
+      <div class="modal-message">
+        <span>Original message</span>
+        <p id="modalMessage">—</p>
+      </div>
+
+      <div class="modal-notes">
+        <span>Follow-up notes</span>
+        <div id="notesList" class="notes-list"></div>
+        <form id="noteForm">
+          <textarea id="noteInput" rows="2" placeholder="Add a follow-up note..." required></textarea>
+          <button type="submit" class="btn btn-primary btn-sm">Add Note</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button id="deleteLeadBtn" class="btn btn-danger btn-sm">Delete Lead</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dashboard.js"></script>
+</body>
+</html>
